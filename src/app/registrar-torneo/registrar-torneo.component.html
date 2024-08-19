@@ -1,17 +1,58 @@
 <h2>REGISTRO DE TORNEO</h2>
-<div class="card flex flex-column md:flex-row gap-3">
-    
-    <p-inputGroup>
-        <p-inputGroupAddon>
-            <i class="pi pi-user"></i>
-        </p-inputGroupAddon>
-        <input class="flex flex-rows" type="text" pInputText variant="filled" />
-    </p-inputGroup>
-    <p-inputGroup>
-        <p-inputGroupAddon>
-            <i class="pi pi-user"></i>
-        </p-inputGroupAddon>
-        <input class="flex flex-rows" type="text" pInputText variant="filled" />
-    </p-inputGroup>
+
+<div class="card flex justify-content-center">
+    <p-floatLabel>
+
+        <input 
+        pInputText 
+        id="nombreTorneo" 
+        (ngModel)]="nombreTorneo" />
+    </p-floatLabel>
+  
+</div>
+<div class="card flex justify-content-center">
+    <p-floatLabel>
+
+        <input 
+        pInputText 
+        id="fechaInicio" 
+        [(ngModel)]="fechaInicio" />
+    </p-floatLabel>
+
+</div>
+<div class="card flex justify-content-center">
+    <p-floatLabel></p-floatLabel>
+    <input 
+        pInputText 
+        id="username" 
+        aria-describedby="username-help" 
+        [(ngModel)]="fechaFin" />
+
+</div>
+<div class="card flex justify-content-center">
+    <p-floatLabel></p-floatLabel>
+    <input 
+        pInputText 
+        id="username" 
+        aria-describedby="username-help" 
+        [(ngModel)]="lugar" />
+
+</div>
+<div class="card flex justify-content-center">
+    <p-floatLabel></p-floatLabel>
+    <input 
+        pInputText 
+        id="username" 
+        aria-describedby="username-help" 
+        [(ngModel)]="cantMaxEquipos" />
+
+</div>
+<div class="card flex justify-content-center">
+    <p-floatLabel></p-floatLabel>
+    <input 
+        pInputText 
+        id="username" 
+        aria-describedby="username-help" 
+        [(ngModel)]="estados" />
 
 </div>

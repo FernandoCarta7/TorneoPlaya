@@ -5,31 +5,39 @@ EDAD
 EQUIPO
 
 -->
-
+<br>
 <div class="card">
 
     <p-table 
-    [value]="" 
-    [paginator]="true" 
-    [rows]="5"
-    [tableStyle]="{ 'min-width' : 'rem' }" 
+    [value]="jugadores"
+    [paginator]="true"
+    [rows]="20"
+    [tableStyle]="{ 'min-width': '50rem' }"
     [rowsPerPageOptions]="[5, 10, 20]">
         <ng-template pTemplate="header">
             <tr>
-                <th style="width: 25%;">Nombre</th>
-                <th style="width: 25%;">Apellido</th>
-                <th style="width: 25%;">Fecha nacimiento</th>
-                <th style="width: 25%;">Id Equipo</th>
+                <th style="width: 20%;">Nombre</th>
+                <th style="width: 20%;">Apellido</th>
+                <th style="width: 20%;">Genero</th>
+                <th style="width: 20%;">Fecha nacimiento</th>
+                <th style="width: 10%;"></th>
+                <th style="width: 10%;"></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-jugador>
             <tr>
-                <td>{{jugador.nombre_primer}}</td>
-                <td>{{jugador.apellido_primer}}</td>
-                <td>{{jugador.fecha_nac}}</td>
-                <td>{{jugador.equipo_id}}</td>
+                <td>{{jugador.primer_nombre}}</td>
+                <td>{{jugador.primer_apellido}}</td>
+                <td>{{jugador.genero}}</td>
+                <td>{{jugador.fecha_nacimiento}}</td>
+                <td>
+                    
+                    <p-button icon="pi pi-pencil" [rounded]="true" [text]="true" [raised]="true" severity="info" />
+                </td>
+                <td>                    
+                    <p-button icon="pi pi-times" [rounded]="true" [text]="true" [raised]="true" severity="danger" />
+                </td>
             </tr>
-
         </ng-template>
 
     </p-table>

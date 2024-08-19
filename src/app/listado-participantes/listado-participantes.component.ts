@@ -4,6 +4,9 @@ import { TableModule } from 'primeng/table';
 
 import { ButtonModule } from 'primeng/button';
 import { Torneo } from '../clases/Torneo';
+import { Jugador } from '../clases/Jugador';
+import { JugadorServicio } from '../servicios/JugadorServicio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'listado-participantes',
@@ -13,11 +16,21 @@ import { Torneo } from '../clases/Torneo';
   styleUrl: './listado-participantes.component.css'
 })
 export class ListadoParticipantesComponent {
-  torneo : Torneo [];
+  
+  jugadores : Jugador[];
+
+  constructor(private jugadorServicio : JugadorServicio , private route : Router ){}
+
   ngOnInit(){
+    this.getJugadores();
+  }
 
-    
-
-    
+  getJugadores(){
+    this.jugadorServicio.getJugadores().subscribe((
+      datos => {
+        this.jugadores = datos;
+        console.log('JUGADORES');
+      }
+    ))
   }
 }
